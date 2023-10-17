@@ -29,6 +29,7 @@ public class AppaSteps {
     String expectedUrl = "https://www.weareappa.com/appa-descarga";
     String actualUrl = appa.getCurrentUrl();
 
+    // Assertion
     Assert.assertEquals("The URLs did not match", expectedUrl, actualUrl);
 }
 
