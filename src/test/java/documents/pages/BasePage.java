@@ -1,6 +1,7 @@
 package documents.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,16 +23,14 @@ public class BasePage {
 
     public BasePage (WebDriver driver){
         BasePage.driver = driver;
-        wait = new WebDriverWait(driver, 10);
     }
 
     public static void navigateTo(String url){
-
         driver.get(url);
     }
 
-    public WebElement findElementByXpath(String xpath){
-        return driver.findElement(By.xpath(xpath));
+    public WebElement waitUntilClickable(String xpath) {
+        return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
     }
 
     public void clickButton(String xpath) {
@@ -39,13 +38,10 @@ public class BasePage {
         button.click();
     }
 
-    public WebElement waitUntilClickable(String xpath) {
-        return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-    }
-
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
+
     
 }
 

@@ -12,12 +12,9 @@ public class AppaIndexPage extends BasePage {
         navigateTo("https://www.weareappa.com");
     }
 
-    public void findTheDownloadButton(){
-        findElementByXpath("//*[@id='comp-lfqwkpxu']/a/div/span[1]");
-    }
-
     public void clicOnDownloadButton(){
-        clickButton("//*[@id='comp-lfqwkpxu']/a/div/span[1]");
+        // Boton de descarga del header.
+        clickButton("//span[contains(text(),'Descargar')]");//xpath relativo por chropath
     }
 
     public String getCurrentUrl(){
