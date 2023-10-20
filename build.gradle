@@ -7,9 +7,8 @@
  */
 
 plugins {
-    id 'application' // asegúrate de que esta línea esté presente
+    id 'application'
     id 'java'
-    // otras configuraciones de plugins aquí...
 }
 
 version= '1.0-SNAPSHOT';
@@ -25,7 +24,6 @@ dependencies {
     // https://mvnrepository.com/artifact/junit/junit
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
 
-
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
 
@@ -35,8 +33,6 @@ dependencies {
     testImplementation 'io.cucumber:cucumber-java:6.9.1'
     testImplementation 'io.cucumber:cucumber-junit:6.9.1'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
-
-
 }
 
 application {
